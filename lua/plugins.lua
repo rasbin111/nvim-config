@@ -24,14 +24,14 @@ require('packer').startup(function(use)
     use 'hrsh7th/vim-vsnip'
 
 	-- File explorer tree
-	--[[ 	use {
+	use {
 		'nvim-tree/nvim-tree.lua',
 		requires = {
 		  'nvim-tree/nvim-web-devicons', -- optional, for file icons
 		},
- 	} ]]
+ 	}
 
-	use {
+	--[[ use {
 	  "nvim-neo-tree/neo-tree.nvim",
 		branch = "v2.x",
 		requires = { 
@@ -39,7 +39,7 @@ require('packer').startup(function(use)
 		  "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
 		  "MunifTanjim/nui.nvim",
 		}
-	  }
+	  } ]]
 		
 	-- DAP for debugging
 	use 'mfussenegger/nvim-dap'

@@ -1,5 +1,5 @@
 -- nvim-tree
---[[ -- disable netrw at the very start of your init.lua (strongly advised)
+-- disable netrw at the very start of your init.lua (strongly advised)
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
@@ -21,10 +21,10 @@ local function open_nvim_tree()
 end
 
 
-vim.api.nvim_create_autocmd({ "VimEnter" }, { callback = open_nvim_tree }) ]]
+vim.api.nvim_create_autocmd({ "VimEnter" }, { callback = open_nvim_tree }) 
 
 
 -- neotree
-vim.cmd([[ let g:neo_tree_remove_legacy_commands = 1 ]])
-require("neo-tree").setup()
+-- vim.cmd([[ let g:neo_tree_remove_legacy_commands = 1 ]])
+-- require("neo-tree").setup()
     

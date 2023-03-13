@@ -6,6 +6,7 @@ require("custom-keys")
 require("debugging")
 require("styling")
 require("statusbar")
+require("tab-bar")
 
 -- line numbering 
 vim.opt.number = true
