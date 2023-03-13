@@ -2,7 +2,7 @@
 local map = vim.api.nvim_set_keymap
 
 -- map the key n to run the command :NvimTreeToggle
-map('n', 'n', [[:Neotree toggle<CR>]], {})
+map('n', 'n', [[:NvimTreeToggle<CR>]], {})
 
 -- nvim-dap keymappings
 -- Press f5 to debug
