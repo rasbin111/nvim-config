@@ -1,3 +1,12 @@
+require("plugins")
+require("mason-config")
+require("code-completion")
+require('file-explorer')
+require("custom-keys")
+require("debugging")
+require("styling")
+require("statusbar")
+
 -- line numbering 
 vim.opt.number = true
 vim.opt.relativenumber = true
@@ -23,24 +32,5 @@ vim.opt.colorcolumn = "80"
 -- clipboard
 vim.opt.clipboard = unnamedplus
 
--- packer 
-return require('packer').startup(function(use)
-  	use 'wbthomason/packer.nvim'
-
-	use {
-		'numToStr/Comment.nvim',
-		config = function()
-			require('Comment').setup()
-		end
-	}
-
-	use {
-	  'nvim-tree/nvim-tree.lua',
-	  requires = {
-		'nvim-tree/nvim-web-devicons', -- optional, for file icons
-	  },
-	  tag = 'nightly' -- optional, updated every week. (see issue #1193)
-	}
-
-end)
-	
+-- Removes Ntree banner
+vim.g.netrw_banner = 0
