@@ -1,12 +1,15 @@
 require("plugins")
-require("mason-config")
-require("code-completion")
 require('file-explorer')
 require("custom-keys")
 require("debugging")
 require("styling")
 require("statusbar")
 require("tab-bar")
+require("terminal-setup")
+require("lsp-config")
+require("auto-completion")
+require("mason-config")
+require("syntax-highlight")
 
 -- line numbering 
 vim.opt.number = true

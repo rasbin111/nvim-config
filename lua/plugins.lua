@@ -8,20 +8,17 @@ require('packer').startup(function(use)
 		end
 	}
 
-	-- code completion 
-	use 'williamboman/mason.nvim'   
-	use 'williamboman/mason-lspconfig.nvim'
-	use 'neovim/nvim-lspconfig'
+	-- package manager for neovim
+	use "williamboman/mason.nvim"
 
-	-- Hrsh7th Code Completion Suite
-    use 'hrsh7th/nvim-cmp' 
-    use 'hrsh7th/cmp-nvim-lsp'
-    use 'hrsh7th/cmp-nvim-lua'
-    use 'hrsh7th/cmp-nvim-lsp-signature-help'
-    use 'hrsh7th/cmp-vsnip'                             
-    use 'hrsh7th/cmp-path'                              
-    use 'hrsh7th/cmp-buffer'                            
-    use 'hrsh7th/vim-vsnip'
+	use 'neovim/nvim-lspconfig' -- Configurations for Nvim LSP
+
+	-- autocomplete
+	use 'hrsh7th/nvim-cmp' -- Autocompletion plugin
+	use 'hrsh7th/cmp-nvim-lsp' -- LSP source for nvim-cmp
+	use 'saadparwaiz1/cmp_luasnip' -- Snippets source for nvim-cmp
+	use 'L3MON4D3/LuaSnip' -- Snippets plugin
+	
 
 	-- File explorer tree
 	use {
@@ -30,6 +27,17 @@ require('packer').startup(function(use)
 		  'nvim-tree/nvim-web-devicons', -- optional, for file icons
 		},
  	}
+
+	-- syntax highlight -> Treesitter
+	 use {
+	  -- recommended packer way of installing it is to run this function, copied from documentation
+			 'nvim-treesitter/nvim-treesitter',
+		  run = function()
+				  local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
+				  ts_update()
+			 end,
+
+	 }
 
 	--[[ use {
 	  "nvim-neo-tree/neo-tree.nvim",
@@ -43,6 +51,9 @@ require('packer').startup(function(use)
 		
 	-- DAP for debugging
 	use 'mfussenegger/nvim-dap'
+
+	-- dap python
+	use 'mfussenegger/nvim-dap-python'
 
 	-- UI for DAP
  	use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} }
@@ -58,5 +69,8 @@ require('packer').startup(function(use)
 
 	 -- tab bar
 	 use {'romgrk/barbar.nvim', requires = 'nvim-web-devicons'}
+
+	 -- toggle terminal
+	 use {"akinsho/toggleterm.nvim", tag = '*'}
 
 end)
