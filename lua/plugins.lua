@@ -39,30 +39,18 @@ require('packer').startup(function(use)
 
 	 }
 
-	--[[ use {
-	  "nvim-neo-tree/neo-tree.nvim",
-		branch = "v2.x",
-		requires = { 
-		  "nvim-lua/plenary.nvim",
-		  "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
-		  "MunifTanjim/nui.nvim",
-		}
-	  } ]]
-		
+	
 	-- DAP for debugging
 	use 'mfussenegger/nvim-dap'
+	
+	-- UI for DAP
+ 	use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} }
 
 	-- linter 
 	use 'mfussenegger/nvim-lint'
 
 	--formatter
 	use 'mhartington/formatter.nvim' 
-
-	-- dap python
-	use 'mfussenegger/nvim-dap-python'
-
-	-- UI for DAP
- 	use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} }
 
 	-- Dracula theme for styling
 	 use 'Mofiqul/dracula.nvim'
