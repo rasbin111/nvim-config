@@ -10,6 +10,7 @@ require("lsp-config")
 require("auto-completion")
 require("mason-config")
 require("syntax-highlight")
+require("linter")
 
 -- line numbering 
 vim.opt.number = true

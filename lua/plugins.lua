@@ -52,6 +52,12 @@ require('packer').startup(function(use)
 	-- DAP for debugging
 	use 'mfussenegger/nvim-dap'
 
+	-- linter 
+	use 'mfussenegger/nvim-lint'
+
+	--formatter
+	use 'mhartington/formatter.nvim' 
+
 	-- dap python
 	use 'mfussenegger/nvim-dap-python'
 
@@ -72,5 +78,27 @@ require('packer').startup(function(use)
 
 	 -- toggle terminal
 	 use {"akinsho/toggleterm.nvim", tag = '*'}
+
+	 -- auto pairs
+	 use {
+		"windwp/nvim-autopairs",
+    	config = function() require("nvim-autopairs").setup {} end
+	 }
+
+	 -- floatin hover docs
+	 use({
+		"glepnir/lspsaga.nvim",
+		branch = "main",
+		config = function()
+			require("lspsaga").setup({})
+		end,
+		requires = {
+			{"nvim-tree/nvim-web-devicons"},
+			--Please make sure you install markdown and markdown_inline parser
+			{"nvim-treesitter/nvim-treesitter"}
+	}
+
+
+})
 
 end)
