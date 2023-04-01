@@ -39,3 +39,5 @@ vim.opt.clipboard = unnamedplus
 
 -- Removes Ntree banner
 vim.g.netrw_banner = 0
+
+
