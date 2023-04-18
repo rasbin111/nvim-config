@@ -8,16 +8,9 @@ require("toggleterm").setup({
   insert_mappings = false,
   direction = 'horizontal',
   close_on_exit = true,
+  auto_scroll = true,
   -- shell = vim.o.shell,
-  highlights = {
-    Normal = {
-      guibg = "#de2232",
-	  background = "#ff2321"
-    },
-	NormalFloat = {
-      link = 'Normal'
-    },
-  },
+
   float_opts = {
       border = "curved",
       highlights = {
