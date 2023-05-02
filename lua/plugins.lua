@@ -24,20 +24,32 @@ require('packer').startup(function(use)
 	
 
 	-- File explorer tree
+	-- use {
+	--  	'nvim-tree/nvim-tree.lua',
+	--  	requires = {
+	--  	  'nvim-tree/nvim-web-devicons', -- optional, for file icons
+	--  	},
+	-- 	}
 	use {
-		'nvim-tree/nvim-tree.lua',
-		requires = {
-		  'nvim-tree/nvim-web-devicons', -- optional, for file icons
-		},
- 	}
+	  "nvim-neo-tree/neo-tree.nvim",
+		branch = "v2.x",
+		winbar = true,
+        statusline = false,
+
+		requires = { 
+		  "nvim-lua/plenary.nvim",
+		  "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
+		  "MunifTanjim/nui.nvim",
+			}
+    	}
 
 	-- syntax highlight -> Treesitter
 	 use {
 	  -- recommended packer way of installing it is to run this function, copied from documentation
-			 'nvim-treesitter/nvim-treesitter',
-		  run = function()
-				  local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
-				  ts_update()
+		'nvim-treesitter/nvim-treesitter',
+		run = function()
+				local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
+				ts_update()
 			 end,
 
 	 }

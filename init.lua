@@ -38,6 +38,7 @@ vim.opt.colorcolumn = "80"
 vim.opt.clipboard = unnamedplus
 
 -- Removes Ntree banner
-vim.g.netrw_banner = 0
+-- vim.g.netrw_banner = 0
+
 
 
